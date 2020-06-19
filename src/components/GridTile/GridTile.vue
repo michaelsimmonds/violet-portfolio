@@ -1,34 +1,34 @@
 <template>
-    <div class="grid-tile">
-        <figure>
-            <img :alt=image.alt :src=getSrc class="grid-tile__image">
-        </figure>
-    </div>
+  <div class="grid-tile">
+    <figure>
+      <img :alt=image.alt :src=getSrc class="grid-tile__image">
+    </figure>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'GridTile',
-    props: {
-       image: {
-           type: Object,
-           required: true,
-           default() {
-               return [
-                   {
-                       id: undefined,
-                       src: '',
-                       alt: ''
-                   }
-               ]
-           }
-       }
-    },
-    computed: {
-        getSrc: function() {
-            return 'static/images/' + this.image.src
-        }
+  name: 'GridTile',
+  props: {
+    image: {
+      type: Object,
+      required: true,
+      default() {
+        return [
+          {
+            id: undefined,
+            src: '',
+            alt: ''
+          }
+        ]
+      }
     }
+  },
+  computed: {
+    getSrc: function() {
+      return 'static/images/' + this.image.src
+    }
+  }
 }
 </script>
 

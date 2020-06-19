@@ -1,11 +1,10 @@
-import Vue from 'vue';
-import Main from './components/Main.vue'
-import Router from './router'
+import Vue from "vue";
+import Main from "./components/Main.vue";
+import Router from "./router";
 
-import './style.scss';
-
+import "./style.scss";
 
 new Vue({
-    render: (createEl) => createEl(Main),
-    router: Router
-}).$mount('#app');
+  render: createEl => createEl(Main),
+  router: Router
+}).$mount("#app");

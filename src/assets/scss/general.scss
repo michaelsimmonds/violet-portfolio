@@ -1,0 +1,20 @@
+* {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  color: $dark;
+  font-family: moon-light;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  margin: auto;
+  max-width: 1330px;
+}
