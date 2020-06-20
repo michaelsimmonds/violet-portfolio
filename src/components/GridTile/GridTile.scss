@@ -1,9 +1,32 @@
 .grid-tile {
-  color: red;
-  width: 25%;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &__height-setter {
+    padding-bottom: 100%; // makes height equivilent to width
+  }
+
+  &__image-wrapper {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
   &__image {
+    height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
     width: 100%;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }

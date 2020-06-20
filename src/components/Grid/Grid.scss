@@ -1,0 +1,19 @@
+@import "../../style.scss";
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__tile {
+    &--featured {
+      grid-column: 1/3;
+      grid-row: 2/4;
+    }
+  }
+}

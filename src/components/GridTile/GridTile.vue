@@ -1,14 +1,15 @@
 <template>
   <div class="grid-tile">
-    <figure>
-      <img :alt=image.alt :src=getSrc class="grid-tile__image">
+    <div class="grid-tile__height-setter"></div>
+    <figure class="grid-tile__image-wrapper">
+      <img :alt="image.alt" :src="getSrc" class="grid-tile__image" />
     </figure>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'GridTile',
+  name: "GridTile",
   props: {
     image: {
       type: Object,
@@ -17,21 +18,22 @@ export default {
         return [
           {
             id: undefined,
-            src: '',
-            alt: ''
+            src: "",
+            alt: "",
+            featured: false
           }
-        ]
+        ];
       }
     }
   },
   computed: {
     getSrc: function() {
-      return 'static/images/' + this.image.src
+      return "static/images/" + this.image.src;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" >
-@import './GridTile.scss';
+@import "./GridTile.scss";
 </style>
