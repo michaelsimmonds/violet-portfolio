@@ -1,0 +1,22 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  text-align: center;
+
+  &__text-wrapper {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+
+  &__title {
+    font-size: 80px;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-size: 65px;
+  }
+}

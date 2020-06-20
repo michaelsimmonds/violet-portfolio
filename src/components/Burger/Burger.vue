@@ -14,9 +14,6 @@
 import { store, mutations } from "../../store.js";
 
 export default {
-  // data: () => ({
-  //   isBurgerActive: false
-  // }),
   computed: {
     isBurgerActive() {
       return store.isNavOpen;
@@ -24,7 +21,6 @@ export default {
   },
   methods: {
     toggle() {
-      // this.isBurgerActive = !this.isBurgerActive;
       mutations.toggleNav();
     }
   }

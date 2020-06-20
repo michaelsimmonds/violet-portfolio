@@ -6,6 +6,9 @@ export const store = Vue.observable({
 
 export const mutations = {
   toggleNav() {
+    store.isNavOpen
+      ? (document.body.style.overflow = "auto")
+      : (document.body.style.overflow = "hidden");
     store.isNavOpen = !store.isNavOpen;
   }
 };
