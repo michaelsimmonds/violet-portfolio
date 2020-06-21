@@ -2,21 +2,18 @@
   <div class="sidebar">
     <div
       class="sidebar__backdrop"
-      @click="closeSidebarPanel"
+      @click="toggle"
       :class="{'sidebar__backdrop--active': isPanelOpen}"
     ></div>
     <transition name="slide">
       <div class="sidebar__panel" :class="{'sidebar__panel--active': isPanelOpen}">
         <div class="sidebar__list-wrapper">
           <ul class="sidebar__list">
-            <li class="sidebar__list-item">
-              <a href="#home" class="sidebar__list-link">Home</a>
+            <li class="sidebar__list-item" @click.prevent="toggle">
+              <router-link to="/" class="sidebar__list-link">Home</router-link>
             </li>
-            <li class="sidebar__list-item">
-              <a href="#about" class="sidebar__list-link">About</a>
-            </li>
-            <li class="sidebar__list-item">
-              <a href="#contact" class="sidebar__list-link">Contact</a>
+            <li class="sidebar__list-item" @click.prevent="toggle">
+              <router-link to="/contact" class="sidebar__list-link">Contact</router-link>
             </li>
           </ul>
         </div>
@@ -28,8 +25,8 @@
 import { store, mutations } from "../../store.js";
 export default {
   methods: {
-    closeSidebarPanel() {
-      closeSidebarPanel: mutations.toggleNav;
+    toggle() {
+      mutations.toggleNav();
     }
   },
   computed: {

@@ -99,7 +99,6 @@ export default {
           alt: "mart"
         }
       ],
-
       index: null
     };
   },
@@ -119,18 +118,6 @@ export default {
       });
       return srcArray;
     }
-  },
-  mounted() {
-    let srcArray;
-    srcArray = this.images.map(imageObject => {
-      // return "{src: static/images/" + imageObject.src + "}";
-      let path = "static/images/" + imageObject.src;
-
-      return {
-        src: path
-      };
-    });
-    console.log(srcArray);
   }
 };
 </script>
