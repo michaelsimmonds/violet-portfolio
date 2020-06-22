@@ -13,6 +13,9 @@
               <router-link to="/" class="sidebar__list-link">Home</router-link>
             </li>
             <li class="sidebar__list-item" @click.prevent="toggle">
+              <router-link to="/about" class="sidebar__list-link">About</router-link>
+            </li>
+            <li class="sidebar__list-item" @click.prevent="toggle">
               <router-link to="/contact" class="sidebar__list-link">Contact</router-link>
             </li>
           </ul>

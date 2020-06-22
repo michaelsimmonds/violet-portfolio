@@ -1,10 +1,22 @@
+@import "../../style.scss";
+
 .burger {
   display: inline-block;
-  left: 20px;
+  left: 6px;
   position: fixed;
   top: 20px;
   transition: all 0.3s ease;
   z-index: 11;
+
+  .homepage & {
+    animation: fadeInLeft 1s ease backwards;
+    animation-delay: 0.9s;
+    animation-iteration-count: 1;
+  }
+
+  @include media-breakpoint-up(md) {
+    left: 20px;
+  }
 
   &.active {
     left: 325px;
@@ -27,7 +39,7 @@
   }
 
   &__button {
-    background-color: transparent;
+    background-color: white;
     border: 0;
     border-radius: 0;
     cursor: pointer;
@@ -37,6 +49,10 @@
     position: relative;
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     width: 32px;
+
+    @include media-breakpoint-up(md) {
+      background-color: transparent;
+    }
 
     &:not(.active &) {
       &:hover {
@@ -89,6 +105,18 @@
     &--3 {
       transform: translateY(6px);
     }
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
 

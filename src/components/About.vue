@@ -1,25 +1,22 @@
 <template>
-  <div class="container pos-relative homepage">
-    <Hero />
+  <div class="about">
     <Burger />
     <Sidebar />
-    <Grid />
+    <AboutDetails />
   </div>
 </template>
 
 <script>
-import Grid from "./Grid/Grid.vue";
 import Burger from "./Burger/Burger.vue";
 import Sidebar from "./Sidebar/Sidebar.vue";
-import Hero from "./Hero/Hero.vue";
+import AboutDetails from "./AboutDetails/AboutDetails.vue";
 
 export default {
-  name: "Home",
+  name: "About",
   components: {
-    Grid,
     Burger,
     Sidebar,
-    Hero
+    AboutDetails
   }
 };
 </script>
