@@ -58,3 +58,30 @@
     }
   }
 }
+
+.trigger.animate-active {
+  .grid__tile {
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+    animation-name: slideUpFade;
+    animation-timing-function: ease-out;
+
+    @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (0.3s);
+      }
+    }
+  }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

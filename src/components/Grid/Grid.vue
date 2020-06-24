@@ -1,5 +1,5 @@
 <template>
-  <div class="grid">
+  <div class="grid" v-animate="'trigger'">
     <CoolLightBox
       :items="getImageSrcs"
       :index="index"
@@ -54,13 +54,13 @@ export default {
         {
           id: 4,
           src: "4.jpg",
-          alt: "mart",
-          featured: true
+          alt: "mart"
         },
         {
           id: 5,
           src: "5.jpg",
-          alt: "mart"
+          alt: "mart",
+          featured: true
         },
         {
           id: 6,
@@ -75,8 +75,7 @@ export default {
         {
           id: 8,
           src: "2.jpg",
-          alt: "mart",
-          featured: true
+          alt: "mart"
         },
         {
           id: 9,
@@ -96,6 +95,11 @@ export default {
         {
           id: 12,
           src: "6.jpg",
+          alt: "mart"
+        },
+        {
+          id: 13,
+          src: "1.jpg",
           alt: "mart"
         }
       ],
