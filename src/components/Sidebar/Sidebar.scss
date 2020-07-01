@@ -33,6 +33,21 @@
 
     &--active {
       width: 380px;
+
+      .trigger.animate-active {
+        .sidebar__list-item {
+          animation-duration: 0.4s;
+          animation-fill-mode: backwards;
+          animation-name: slideRightFade;
+          animation-timing-function: ease-out;
+
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              animation-delay: $i * (0.2s);
+            }
+          }
+        }
+      }
     }
   }
 
@@ -79,6 +94,18 @@
       &:after {
         width: 100%;
       }
+    }
+  }
+
+  @keyframes slideRightFade {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }

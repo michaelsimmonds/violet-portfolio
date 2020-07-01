@@ -7,10 +7,10 @@
     ></div>
     <transition name="slide">
       <div class="sidebar__panel" :class="{'sidebar__panel--active': isPanelOpen}">
-        <div class="sidebar__list-wrapper">
+        <div class="sidebar__list-wrapper" v-animate="'trigger'">
           <ul class="sidebar__list">
             <li class="sidebar__list-item" @click.prevent="toggle">
-              <router-link to="/" class="sidebar__list-link">Home</router-link>
+              <router-link to="/" class="sidebar__list-link">Gallery</router-link>
             </li>
             <li class="sidebar__list-item" @click.prevent="toggle">
               <router-link to="/about" class="sidebar__list-link">About</router-link>

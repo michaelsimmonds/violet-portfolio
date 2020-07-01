@@ -7,6 +7,7 @@
   // margin: 20px;
   margin-left: 45px;
   margin-right: 20px;
+  padding-bottom: 100px;
 
   @include media-breakpoint-up(md) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -25,8 +26,13 @@
   }
 
   .cool-lightbox {
+    cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' fill-rule='evenodd' stroke-width='1.5' stroke='%23EFEFEF'%3E%3Ccircle cx='16' cy='16' r='15'/%3E%3Cpath stroke-linecap='square' d='M10.5 16.5h12'/%3E%3C/g%3E%3C/svg%3E")
+        16 16,
+      pointer;
+
     &__slide {
       img {
+        cursor: auto;
         max-width: 85%;
       }
     }
@@ -34,6 +40,10 @@
     .cool-lightbox-toolbar {
       &__btn {
         background: none;
+
+        @include media-breakpoint-up(xl) {
+          display: none;
+        }
       }
     }
 

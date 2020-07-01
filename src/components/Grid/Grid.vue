@@ -3,7 +3,7 @@
     <CoolLightBox
       :items="getImageSrcs"
       :index="index"
-      loop
+      disableZoom="true"
       @close="index = null"
       :effect="'fade'"
       :slideshow="false"

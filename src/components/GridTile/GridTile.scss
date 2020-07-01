@@ -1,5 +1,7 @@
 .grid-tile {
-  cursor: pointer;
+  cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 32'%3E%3Cdefs%3E%3Cpath id='a' d='M21.828 21.26l-4.789-4.788 4.788-4.789c.156-.156.156-.409 0-.566-.156-.156-.41-.156-.566 0l-4.788 4.789-4.79-4.788c-.156-.156-.41-.156-.566 0-.156.156-.156.409 0 .565l4.789 4.789-4.788 4.789c-.156.156-.156.41 0 .566.078.079.181.118.283.118.103 0 .205-.039.283-.118l4.789-4.789 4.789 4.788c.078.079.18.118.283.118.102 0 .205-.039.283-.118.156-.156.156-.41 0-.566'/%3E%3C/defs%3E%3Cg stroke-width='1.5' fill='none' fill-rule='evenodd' stroke='%23EFEFEF'%3E%3Ccircle cx='16' cy='16' r='15'/%3E%3Cuse fill='%23EFEFEF' stroke-width='1.5' transform='rotate(45 16.4725 16.4725)' xlink:href='%23a'/%3E%3C/g%3E%3C/svg%3E")
+      16 16,
+    pointer;
   display: inline-block;
   overflow: hidden;
   position: relative;

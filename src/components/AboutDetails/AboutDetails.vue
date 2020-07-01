@@ -1,6 +1,8 @@
 <template>
   <div class="about-details">
-    <h2 class="about-details__heading">About .</h2>
+    <h2 class="about-details__home-name">
+      <router-link class="about-details__home-link" to="/">Violet Iola Argent</router-link>
+    </h2>
   </div>
 </template>
 

@@ -1,9 +1,14 @@
 .about-details {
-  &__heading {
+  &__home-name {
     display: inline-block;
     font-size: 30px;
     left: 100px;
     position: absolute;
     top: 20px;
+  }
+
+  &__home-link {
+    color: #2b2b2b;
+    text-decoration: none;
   }
 }
