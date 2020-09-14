@@ -1,129 +1,91 @@
 @import "../../style.scss";
 
-.burger {
-  display: inline-block;
-  left: 6px;
-  position: fixed;
-  top: 20px;
-  transition: all 0.3s ease;
-  z-index: 11;
+.hamburger-menu {
+  display: block;
+  margin: 30px;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 1;
 
-  .homepage & {
-    animation: fadeInLeft 1s ease backwards;
-    animation-delay: 0.9s;
-    animation-iteration-count: 1;
-  }
-
-  @include media-breakpoint-up(md) {
-    left: 20px;
-  }
-
-  &.active {
-    left: 325px;
-
-    .burger__button {
-      transform: rotate(-180deg);
-    }
-
-    .burger__bar--1 {
-      transform: rotate(45deg);
-    }
-
-    .burger__bar--2 {
-      opacity: 0;
-    }
-
-    .burger__bar--3 {
-      transform: rotate(-45deg);
-    }
-  }
-
-  &__button {
-    background-color: white;
-    border: 0;
-    border-radius: 0;
+  input {
     cursor: pointer;
     display: block;
-    height: 30px;
-    pointer-events: all;
-    position: relative;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    width: 32px;
-
-    @include media-breakpoint-up(md) {
-      background-color: transparent;
-    }
-
-    &:not(.active &) {
-      &:hover {
-        .burger__bar--2 {
-          transform: scaleX(1);
-        }
-      }
-    }
-
-    .active & {
-      .burger__bar--2 {
-        transition: none;
-      }
-
-      &:hover {
-        .burger__bar--2 {
-          transform: unset;
-        }
-      }
-    }
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  &__bar {
-    background-color: #2b2b2b;
-    height: 2px;
-    left: 6px;
-    margin-top: -1px;
-    position: absolute;
-    right: 6px;
-    top: 50%;
-    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-      opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-      background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    width: auto;
-
-    &--1 {
-      -webkit-transform: translateY(-6px);
-      transform: translateY(-6px);
-    }
-
-    &--2 {
-      transform: scaleX(0.8);
-      transform-origin: 100% 50%;
-    }
-
-    &--3 {
-      transform: translateY(6px);
-    }
-  }
-}
-
-@keyframes fadeInLeft {
-  0% {
+    height: 36px;
+    left: 0;
     opacity: 0;
-    transform: translate(-30px);
+    position: absolute;
+    top: -7px;
+    -webkit-touch-callout: none;
+    width: 20px;
+    z-index: 2;
+
+    &:checked ~ span {
+      background: $c-black;
+      opacity: 1;
+      transform: rotate(-45deg) translate(-1px, -1px);
+      width: 24px;
+    }
+
+    &:checked ~ span:nth-last-child(2) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    &:checked ~ span:nth-last-child(3) {
+      transform: rotate(45deg) translate(-4px, -3px);
+    }
+
+    &:hover ~ span:nth-last-child(1) {
+      transform: translate(0, 3px);
+    }
+
+    &:hover ~ span:nth-last-child(3) {
+      transform: translate(0, -3px);
+    }
+
+    // the below effectively turns off hover state when icon is in cross form
+    &:hover {
+      &:checked ~ span {
+        transform: rotate(-45deg) translate(-1px, -1px);
+        width: 24px;
+      }
+    }
+
+    &:hover {
+      &:checked ~ span:nth-last-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+    }
+
+    &:hover {
+      &:checked ~ span:nth-last-child(3) {
+        transform: rotate(45deg) translate(-4px, -3px);
+        width: 24px;
+      }
+    }
   }
 
-  100% {
-    opacity: 1;
-    transform: translate(0);
+  span {
+    background: $c-black;
+    display: block;
+    height: 2px;
+    margin-bottom: 4px;
+    position: relative;
+    transform-origin: center left;
+    transition: background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+      transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease,
+      width 0.55s ease;
+    width: 20px;
+    z-index: 1;
+
+    &:first-child {
+      transform-origin: 0% 0%;
+    }
+
+    &:nth-last-child(2) {
+      transform-origin: 0% 100%;
+    }
   }
-}
-
-.no-touchevents .burger-bar--2:hover {
-  transform: scaleX(1);
-}
-
-.hidden {
-  visibility: hidden;
 }

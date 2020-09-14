@@ -3,7 +3,7 @@
     <CoolLightBox
       :items="getImageSrcs"
       :index="index"
-      disableZoom="true"
+      :disableZoom="true"
       @close="index = null"
       :effect="'fade'"
       :slideshow="false"
@@ -38,69 +38,129 @@ export default {
       images: [
         {
           id: 1,
-          src: "1.jpg",
-          alt: "mart"
+          src: "1.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 2,
-          src: "2.jpg",
-          alt: "mart"
+          src: "2.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 3,
-          src: "3.jpg",
-          alt: "mart"
+          src: "3.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 4,
-          src: "4.jpg",
-          alt: "mart"
+          src: "5.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 5,
-          src: "5.jpg",
-          alt: "mart",
+          src: "4.jpeg",
+          alt: "portrait illustration",
           featured: true
         },
         {
           id: 6,
-          src: "6.jpg",
-          alt: "mart"
+          src: "6.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 7,
-          src: "1.jpg",
-          alt: "mart"
+          src: "7.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 8,
-          src: "2.jpg",
-          alt: "mart"
+          src: "8.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 9,
-          src: "3.jpg",
-          alt: "mart"
+          src: "9.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 10,
-          src: "4.jpg",
-          alt: "mart"
+          src: "10.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 11,
-          src: "5.jpg",
-          alt: "mart"
+          src: "11.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 12,
-          src: "6.jpg",
-          alt: "mart"
+          src: "12.jpeg",
+          alt: "portrait illustration"
         },
         {
           id: 13,
-          src: "1.jpg",
-          alt: "mart"
+          src: "13.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 14,
+          src: "14.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 15,
+          src: "15.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 16,
+          src: "16.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 17,
+          src: "17.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 18,
+          src: "18.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 19,
+          src: "19.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 20,
+          src: "20.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 21,
+          src: "21.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 22,
+          src: "22.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 23,
+          src: "23.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 24,
+          src: "24.jpeg",
+          alt: "portrait illustration"
+        },
+        {
+          id: 25,
+          src: "25.jpeg",
+          alt: "portrait illustration"
         }
       ],
       index: null
