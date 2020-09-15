@@ -1,30 +1,27 @@
 <template>
   <div class="nav">
     <div class="nav__wrapper">
-      <Burger />
-    </div>
-    <!-- <div
-      class="sidebar__backdrop"
-      @click="toggle"
-      :class="{'sidebar__backdrop--active': isPanelOpen}"
-    ></div>-->
-    <!-- <transition name="slide">
-      <div class="sidebar__panel" :class="{'sidebar__panel--active': isPanelOpen}">
-        <div class="sidebar__list-wrapper" v-animate="'trigger'">
-          <ul class="sidebar__list">
-            <li class="sidebar__list-item" @click.prevent="toggle">
-              <router-link to="/" class="sidebar__list-link">Gallery</router-link>
-            </li>
-            <li class="sidebar__list-item" @click.prevent="toggle">
-              <router-link to="/about" class="sidebar__list-link">About</router-link>
-            </li>
-            <li class="sidebar__list-item" @click.prevent="toggle">
-              <router-link to="/contact" class="sidebar__list-link">Contact</router-link>
-            </li>
-          </ul>
-        </div>
+      <div class="nav__burger-wrapper" @click="toggleNav">
+        <Burger />
       </div>
-    </transition>-->
+    </div>
+    <!-- <transition name="nav-slide"> -->
+    <div v-if="navOpen" class="nav__panel">
+      <div class="nav__list-wrapper">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <router-link to="/" class="nav__list-link">Gallery</router-link>
+          </li>
+          <li class="nav__list-item">
+            <router-link to="/about" class="nav__list-link">About</router-link>
+          </li>
+          <li class="nav__list-item">
+            <router-link to="/contact" class="nav__list-link">Contact</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- </transition> -->
   </div>
 </template>
 <script>
@@ -35,17 +32,19 @@ export default {
   name: "Nav",
   components: {
     Burger
+  },
+  data() {
+    return {
+      navOpen: false
+    };
+  },
+  methods: {
+    toggleNav: function() {
+      console.log("here");
+      // if (!this.navOpen) this.navOpen = true;
+      this.navOpen = !this.navOpen;
+    }
   }
-  // methods: {
-  //   toggle() {
-  //     mutations.toggleNav();
-  //   }
-  // },
-  // computed: {
-  //   isPanelOpen() {
-  //     return store.isNavOpen;
-  //   }
-  // }
 };
 </script>
 

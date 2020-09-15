@@ -15,7 +15,7 @@
       :key="index"
       class="grid__tile"
       @click="setIndex(index)"
-      :class="{ 'grid__tile--featured': image.featured}"
+      :class="image.featured"
     >
       <GridTile :image="image" />
     </div>
@@ -60,11 +60,11 @@ export default {
           id: 5,
           src: "4.jpeg",
           alt: "portrait illustration",
-          featured: true
+          featured: "grid__tile--featured--1"
         },
         {
           id: 6,
-          src: "6.jpeg",
+          src: "8.jpeg",
           alt: "portrait illustration"
         },
         {
@@ -74,7 +74,7 @@ export default {
         },
         {
           id: 8,
-          src: "8.jpeg",
+          src: "15.jpeg",
           alt: "portrait illustration"
         },
         {
@@ -95,7 +95,8 @@ export default {
         {
           id: 12,
           src: "12.jpeg",
-          alt: "portrait illustration"
+          alt: "portrait illustration",
+          featured: "grid__tile--featured--2"
         },
         {
           id: 13,
@@ -109,59 +110,50 @@ export default {
         },
         {
           id: 15,
-          src: "15.jpeg",
+          src: "black2.jpeg",
           alt: "portrait illustration"
         },
         {
           id: 16,
-          src: "16.jpeg",
+          src: "black1.jpeg",
           alt: "portrait illustration"
         },
         {
           id: 17,
-          src: "17.jpeg",
-          alt: "portrait illustration"
+          src: "6.jpeg",
+          alt: "portrait illustration",
+          featured: "grid__tile--featured--3"
         },
         {
           id: 18,
-          src: "18.jpeg",
+          src: "black3.jpeg",
           alt: "portrait illustration"
         },
         {
           id: 19,
-          src: "19.jpeg",
+          src: "sketch1.jpeg",
           alt: "portrait illustration"
         },
         {
           id: 20,
-          src: "20.jpeg",
+          src: "sketch2.jpeg",
           alt: "portrait illustration"
         },
         {
           id: 21,
-          src: "21.jpeg",
-          alt: "portrait illustration"
-        },
-        {
-          id: 22,
-          src: "22.jpeg",
-          alt: "portrait illustration"
-        },
-        {
-          id: 23,
-          src: "23.jpeg",
-          alt: "portrait illustration"
-        },
-        {
-          id: 24,
-          src: "24.jpeg",
-          alt: "portrait illustration"
-        },
-        {
-          id: 25,
-          src: "25.jpeg",
+          src: "sketch3.jpeg",
           alt: "portrait illustration"
         }
+        // {
+        //   id: 22,
+        //   src: "favicon.jpeg",
+        //   alt: "portrait illustration"
+        // }
+        // {
+        //   id: 24,
+        //   src: "24.jpeg",
+        //   alt: "portrait illustration"
+        // }
       ],
       index: null
     };

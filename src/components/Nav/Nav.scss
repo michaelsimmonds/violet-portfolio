@@ -5,11 +5,26 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   &__wrapper {
     align-items: flex-end;
     display: flex;
     height: 100%;
     justify-content: flex-end;
+  }
+
+  &__panel {
+    align-items: center;
+    background-color: $c-white;
+    bottom: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
   }
 }

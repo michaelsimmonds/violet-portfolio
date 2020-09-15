@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage">
+  <div class="homepage pos-relative">
     <Nav />
     <div class="container pos-relative">
       <Hero />

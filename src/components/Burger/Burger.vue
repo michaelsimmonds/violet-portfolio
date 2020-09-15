@@ -19,19 +19,9 @@
 <script>
 import { store, mutations } from "../../store.js";
 
-export default {
-  // computed: {
-  //   isBurgerActive() {
-  //     return store.isNavOpen;
-  //   }
-  // },
-  // methods: {
-  //   toggle() {
-  //     mutations.toggleNav();
-  //   }
-  // }
-};
+export default {};
 </script>
+
 <style lang="scss" >
 @import "./Burger.scss";
 </style>
