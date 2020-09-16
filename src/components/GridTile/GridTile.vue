@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-tile">
+  <div class="grid-tile" v-animate="'slideUpFade'">
     <div class="grid-tile__height-setter"></div>
     <div class="grid-tile__overlay"></div>
     <figure class="grid-tile__image-wrapper">

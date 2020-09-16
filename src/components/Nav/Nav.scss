@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 9;
 
   &__wrapper {
     align-items: flex-end;
@@ -16,7 +16,8 @@
 
   &__panel {
     align-items: center;
-    background-color: $c-white;
+    // background-color: $c-white;
+    background-color: $c-black;
     bottom: 0;
     display: flex;
     height: 100vh;
@@ -26,5 +27,109 @@
     right: 0;
     top: 0;
     width: 100vw;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    left: 50%;
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__list-item {
+    animation: 0.5s navFadeOut ease-out backwards;
+    display: block;
+    font-size: 20px;
+    margin: 0 100px;
+    text-align: center;
+    text-decoration: none;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.2s + ($i * 0.2s);
+      }
+    }
+  }
+
+  &--open {
+    .nav__list-item {
+      animation: 0.5s navFadeIn ease-out forwards;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          animation-delay: 0.3s - ($i * 0.1s);
+        }
+      }
+    }
+  }
+
+  &__list-link {
+    // color: #2b2b2b;
+    color: $c-white;
+    font-size: 26px;
+    position: relative;
+    text-decoration: none;
+
+    &:after {
+      // background-color: #2b2b2b;
+      background-color: $c-white;
+      bottom: -2px;
+      content: "";
+      display: inline-block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      transition: all 0.3s ease;
+      width: 0;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  // transitions and animations
+
+  .nav-slide-enter-active {
+    transition: all 0.3s ease-out;
+  }
+
+  .nav-slide-leave-active {
+    transition: all 0.3s ease-in 0.5s;
+  }
+
+  .nav-slide-enter,
+  .nav-slide-leave-to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  @keyframes navFadeOut {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes navFadeIn {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
   }
 }

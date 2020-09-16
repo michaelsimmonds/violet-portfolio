@@ -1,8 +1,5 @@
 <template>
   <div class="contact-details">
-    <h2 class="about-details__home-name">
-      <router-link class="about-details__home-link" to="/">Violet Iola Argent</router-link>
-    </h2>
     <ul class="contact-details__list">
       <li class="contact-details__list-item">
         <a class="contact-details__link" href="mailto:violetiargent@gmail.com">

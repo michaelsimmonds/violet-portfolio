@@ -1,5 +1,5 @@
 <template>
-  <div class="grid" v-animate="'trigger'">
+  <div class="grid">
     <CoolLightBox
       :items="getImageSrcs"
       :index="index"
@@ -38,7 +38,7 @@ export default {
       images: [
         {
           id: 1,
-          src: "1.jpeg",
+          src: "4.jpeg",
           alt: "portrait illustration"
         },
         {
@@ -58,7 +58,7 @@ export default {
         },
         {
           id: 5,
-          src: "4.jpeg",
+          src: "1.jpeg",
           alt: "portrait illustration",
           featured: "grid__tile--featured--1"
         },
@@ -144,16 +144,6 @@ export default {
           src: "sketch3.jpeg",
           alt: "portrait illustration"
         }
-        // {
-        //   id: 22,
-        //   src: "favicon.jpeg",
-        //   alt: "portrait illustration"
-        // }
-        // {
-        //   id: 24,
-        //   src: "24.jpeg",
-        //   alt: "portrait illustration"
-        // }
       ],
       index: null
     };
@@ -165,8 +155,7 @@ export default {
   },
   computed: {
     getImageSrcs() {
-      let srcArray;
-      srcArray = this.images.map(imageObject => {
+      let srcArray = this.images.map(imageObject => {
         let path = "static/images/" + imageObject.src;
         return {
           src: path
