@@ -1,6 +1,9 @@
 <template>
   <div class="nav" :class="{ 'nav--open': !navOpen}">
     <div class="nav__wrapper">
+      <div class="nav__home-wrapper">
+        <router-link to="/" class="nav__list-link">Violet Argent</router-link>
+      </div>
       <div class="nav__burger-wrapper" @click="toggleNav">
         <Burger />
       </div>
@@ -9,7 +12,7 @@
       <div v-if="navOpen" class="nav__panel">
         <ul class="nav__list">
           <li class="nav__list-item">
-            <router-link to="/" class="nav__list-link">Gallery</router-link>
+            <router-link to="/gallery" class="nav__list-link">Gallery</router-link>
           </li>
           <li class="nav__list-item">
             <router-link to="/about" class="nav__list-link">About</router-link>
