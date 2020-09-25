@@ -5,6 +5,7 @@
       <router-link to="/"></router-link>
       <router-link to="/contact"></router-link>
       <router-link to="/about"></router-link>
+      <router-link to="/gallery"></router-link>
     </p>
   </div>
 </template>

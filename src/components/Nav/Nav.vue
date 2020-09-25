@@ -26,7 +26,6 @@
   </div>
 </template>
 <script>
-// import { store, mutations } from "../../store.js";
 import Burger from "../Burger/Burger.vue";
 
 export default {

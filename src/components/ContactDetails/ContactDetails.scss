@@ -50,18 +50,14 @@
   }
 
   &__list-item {
+    animation: 1s ease fadeIn backwards;
     font-size: 25px;
     line-height: 25px;
-    // opacity: 0;
     text-align: center;
 
-    .fadeIn & {
-      animation: 1s ease fadeIn forwards;
-
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          animation-delay: $i * (0.2s);
-        }
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * (0.2s);
       }
     }
   }

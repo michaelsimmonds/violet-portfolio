@@ -3,7 +3,7 @@
     <div class="grid-tile__height-setter"></div>
     <div class="grid-tile__overlay"></div>
     <figure class="grid-tile__image-wrapper">
-      <img :alt="image.alt" :src="getSrc" class="grid-tile__image" />
+      <img :alt="image.alt" :src="getSrc" :data-src="getSrc" class="grid-tile__image lazyload" />
     </figure>
   </div>
 </template>
