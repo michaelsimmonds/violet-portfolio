@@ -1,12 +1,15 @@
 @import "../../style.scss";
 
 .nav {
-  // background-color: $c-white;
   height: 80px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9;
+
+  &__burger-wrapper {
+    margin: 30px;
+  }
 
   &__wrapper {
     align-items: center;
@@ -22,8 +25,7 @@
 
   &__panel {
     align-items: center;
-    background-color: #f9f9f9;
-    // background-color: $c-white;
+    background-color: $c-light-grey;
     bottom: 0;
     display: flex;
     height: 100vh;
@@ -55,7 +57,7 @@
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
-        animation-delay: 0.2s + ($i * 0.2s);
+        animation-delay: 0.2s + ($i * 0.1s);
       }
     }
   }
@@ -110,7 +112,6 @@
 
   .nav-slide-enter,
   .nav-slide-leave-to {
-    // opacity: 0;
     transform: translateY(-100%);
   }
 
