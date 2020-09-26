@@ -11,17 +11,17 @@
     <transition name="nav-slide">
       <div v-if="navOpen" class="nav__panel">
         <ul class="nav__list">
-          <li class="nav__list-item">
+          <li class="nav__list-item" :class="{'active': path === '/gallery'}">
             <router-link
               to="/gallery"
               class="nav__list-link"
               @click.native="checkScrollLock"
             >Gallery</router-link>
           </li>
-          <li class="nav__list-item">
+          <li class="nav__list-item" :class="{'active': path === '/about'}">
             <router-link to="/about" class="nav__list-link" @click.native="checkScrollLock">About</router-link>
           </li>
-          <li class="nav__list-item">
+          <li class="nav__list-item" :class="{'active': path === '/contact'}">
             <router-link
               to="/contact"
               class="nav__list-link"
@@ -45,6 +45,11 @@ export default {
     return {
       navOpen: false
     };
+  },
+  computed: {
+    path() {
+      return this.$route.path;
+    }
   },
   methods: {
     toggleNav: function() {

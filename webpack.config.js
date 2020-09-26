@@ -19,7 +19,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Images: path.resolve(__dirname, "src/assets/images")
+      "@": path.resolve("src")
     }
   },
   module: {
@@ -31,7 +31,11 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         loader: ["vue-style-loader", "css-loader", "sass-loader"]
       },
-      { test: /\.(png|jpg|gif|svg)$/i, loader: "file-loader" }
+      { test: /\.(png|jpg|gif|svg)$/i, loader: "file-loader" },
+      {
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: "file-loader"
+      }
     ]
   },
   plugins: [
