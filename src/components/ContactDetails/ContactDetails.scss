@@ -1,15 +1,78 @@
+@import "../../style.scss";
+
 .contact-details {
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
+  overflow: hidden;
   position: relative;
+
+  @include media-breakpoint-up(xl) {
+    flex-direction: row;
+  }
+
+  &__section {
+    height: 100%;
+    position: relative;
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      width: 50%;
+    }
+
+    &--1 {
+      background-color: $c-light-grey;
+      height: 300px;
+      margin-top: 80px;
+
+      @include media-breakpoint-up(md) {
+        height: 500px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    animation: 2s ease fadeIn backwards;
+    font-family: NeueMediumItalic;
+    font-size: 55px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+
+    @include media-breakpoint-up(md) {
+      font-size: 80px;
+    }
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     list-style: none;
+    margin-top: 20px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 50%;
+      margin-top: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+    }
   }
 
   &__link {
@@ -18,12 +81,20 @@
     border-radius: 8px;
     color: rgba(0, 0, 0, 1);
     display: flex;
-    margin: 40px auto;
+    margin: 20px;
     position: relative;
     text-decoration: none;
     transition: background-size 0.3s cubic-bezier(0, 0.7, 0.3, 1),
       color 0.3s ease-out;
     width: fit-content;
+
+    @include media-breakpoint-up(md) {
+      margin: 30px auto;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 30px 10px;
+    }
 
     &:after {
       background-color: rgba(255, 255, 255, 0);
@@ -40,24 +111,32 @@
       &:after {
         background-color: rgba(255, 255, 255, 0.3);
       }
+
+      .contact-details__icon {
+        transform: scale(1.2);
+      }
     }
   }
 
   &__icon {
     height: 25px;
-    margin-right: 25px;
+    margin: 10px 25px 10px 10px;
+    transition: all 0.2s ease-out;
     width: 25px;
   }
 
   &__list-item {
-    animation: 1s ease fadeIn backwards;
-    font-size: 25px;
+    animation: 1s ease fadeInFromRight backwards;
+    font-size: 20px;
     line-height: 25px;
-    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: 25px;
+    }
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
-        animation-delay: $i * (0.2s);
+        animation-delay: 0.5s + $i * (0.1s);
       }
     }
   }
