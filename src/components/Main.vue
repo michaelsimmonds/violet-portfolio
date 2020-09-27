@@ -11,7 +11,12 @@
 </template>
 
 <script>
+import { detectMouse } from "../assets/utilities";
+
 export default {
-  name: "Main"
+  name: "Main",
+  mounted() {
+    detectMouse();
+  }
 };
 </script>
