@@ -2,7 +2,11 @@
   <div class="nav" :class="{ 'nav--open': !navOpen}">
     <div class="nav__wrapper">
       <div class="nav__home-wrapper">
-        <router-link to="/" class="nav__list-link" @click.native="checkScrollLock">Violet Argent</router-link>
+        <span
+          tabindex="0"
+          class="nav__list-link"
+          @click="checkRoute(homeLink.path)"
+        >{{homeLink.title}}</span>
       </div>
       <div class="nav__burger-wrapper">
         <Burger @click.native="toggleNav" :checked="navOpen" />
@@ -11,22 +15,15 @@
     <transition name="nav-slide">
       <div v-if="navOpen" class="nav__panel">
         <ul class="nav__list">
-          <li class="nav__list-item" :class="{'active': path === '/gallery'}">
-            <router-link
-              to="/gallery"
-              class="nav__list-link"
-              @click.native="checkScrollLock"
-            >Gallery</router-link>
-          </li>
-          <li class="nav__list-item" :class="{'active': path === '/about'}">
-            <router-link to="/about" class="nav__list-link" @click.native="checkScrollLock">About</router-link>
-          </li>
-          <li class="nav__list-item" :class="{'active': path === '/contact'}">
-            <router-link
-              to="/contact"
-              class="nav__list-link"
-              @click.native="checkScrollLock"
-            >Contact</router-link>
+          <li
+            v-for="(link, index) in pageLinks"
+            :key="index"
+            class="nav__list-item"
+            :class="{'active': path === link.path}"
+            @click="checkRoute(link.path)"
+            tabindex="0"
+          >
+            <span class="nav__list-link">{{link.title}}</span>
           </li>
         </ul>
       </div>
@@ -43,7 +40,25 @@ export default {
   },
   data() {
     return {
-      navOpen: false
+      navOpen: false,
+      homeLink: {
+        path: "/",
+        title: "Violet Argent"
+      },
+      pageLinks: [
+        {
+          path: "/gallery",
+          title: "Gallery"
+        },
+        {
+          path: "/about",
+          title: "About"
+        },
+        {
+          path: "/contact",
+          title: "Contact"
+        }
+      ]
     };
   },
   computed: {
@@ -58,7 +73,8 @@ export default {
         ? (document.body.style.overflow = "hidden")
         : (document.body.style.overflow = "auto");
     },
-    checkScrollLock: function() {
+    checkRoute(path) {
+      this.$route.path === path ? this.toggleNav() : this.$router.push(path);
       if ((document.body.style.overflow = "hidden"))
         document.body.style.overflow = "auto";
     }

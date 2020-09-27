@@ -8,12 +8,16 @@
 <script>
 import Nav from "./Nav/Nav.vue";
 import Hero from "./Hero/Hero.vue";
+import { detectMouse } from "../assets/utilities";
 
 export default {
   name: "Home",
   components: {
     Nav,
     Hero
+  },
+  mounted() {
+    detectMouse();
   }
 };
 </script>

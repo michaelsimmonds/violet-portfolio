@@ -19,3 +19,11 @@ html {
   margin: auto;
   max-width: 1330px;
 }
+
+:focus {
+  outline: #08f auto 2px;
+}
+
+body.using-mouse :focus {
+  outline: none;
+}
