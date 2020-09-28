@@ -27,7 +27,7 @@
 
   &__panel {
     align-items: center;
-    background-color: $c-light-grey;
+    background-color: rgb(59, 74, 84);
     bottom: 0;
     display: flex;
     height: 100vh;
@@ -41,32 +41,44 @@
 
   &__list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     left: 50%;
     list-style: none;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
   }
 
   &__list-item {
-    animation: 0.5s navFadeOut ease-out backwards;
+    animation: 0.5s navFadeIn ease-out forwards;
     display: block;
     font-size: 20px;
-    margin: 0 100px;
+    margin: 40px 100px;
     position: relative;
     text-align: center;
     text-decoration: none;
 
+    @include media-breakpoint-up(md) {
+      margin: 0 50px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 90px;
+    }
+
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
-        animation-delay: 0.2s + ($i * 0.1s);
+        animation-delay: 0.3s - ($i * 0.1s);
       }
     }
 
     &.active {
       &:after {
-        background-color: $c-black;
+        background-color: $c-white;
         bottom: -7px;
         content: "";
         display: inline-block;
@@ -82,25 +94,44 @@
 
   &--open {
     .nav__list-item {
-      animation: 0.5s navFadeIn ease-out forwards;
+      animation: 0.5s navFadeOut ease-out backwards;
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation-delay: 0.3s - ($i * 0.1s);
+          animation-delay: 0.2s + ($i * 0.1s);
         }
+      }
+    }
+
+    .nav__list-link {
+      &:hover {
+        color: rgba($c-white, 0.7);
+      }
+
+      &--home {
+        color: $c-white;
+        transition-delay: 0s;
       }
     }
   }
 
   &__list-link {
-    color: $c-black;
+    color: $c-white;
     cursor: pointer;
     font-size: 26px;
     position: relative;
     text-decoration: none;
 
-    &:hover {
-      color: rgba($c-black, 0.7);
+    &--home {
+      color: $c-black;
+      transition: color 0.3s ease 0.7s;
+      // transition-delay: 0.7s;
+
+      &:hover {
+        // color: rgba($c-black, 0.7);
+        opacity: 0.7;
+        transition-delay: 0;
+      }
     }
   }
 

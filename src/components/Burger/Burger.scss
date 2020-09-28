@@ -27,6 +27,10 @@
 
   &.checked {
     .hamburger-menu__span {
+      background-color: $c-white;
+      transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1) 0s,
+        transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease,
+        width 0.55s ease;
       width: 24px;
 
       &--1 {
@@ -51,7 +55,7 @@
     margin-bottom: 4px;
     position: relative;
     transform-origin: center left;
-    transition: background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+    transition: background-color 0.3s cubic-bezier(0.77, 0.2, 0.05, 1) 0.7s,
       transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease,
       width 0.55s ease;
     width: 20px;

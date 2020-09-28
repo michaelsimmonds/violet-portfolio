@@ -1,10 +1,10 @@
 <template>
-  <div class="nav" :class="{ 'nav--open': !navOpen}">
+  <div class="nav" :class="{ 'nav--open': navOpen}">
     <div class="nav__wrapper">
       <div class="nav__home-wrapper">
         <span
           tabindex="0"
-          class="nav__list-link"
+          class="nav__list-link nav__list-link--home"
           @click="checkRoute(homeLink.path)"
         >{{homeLink.title}}</span>
       </div>
