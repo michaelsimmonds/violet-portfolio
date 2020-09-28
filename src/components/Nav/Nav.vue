@@ -74,9 +74,16 @@ export default {
         : (document.body.style.overflow = "auto");
     },
     checkRoute(path) {
-      this.$route.path === path ? this.toggleNav() : this.$router.push(path);
-      if ((document.body.style.overflow = "hidden"))
-        document.body.style.overflow = "auto";
+      if (this.$route.path === path && this.navOpen) {
+        this.toggleNav();
+      } else if (path === "/" && !this.navOpen && this.$route.path != path) {
+        this.$router.push(path);
+      } else if (path === "/" && !this.navOpen && this.$route.path === path) {
+        return;
+      } else {
+        this.$router.push(path);
+        this.toggleNav();
+      }
     }
   }
 };

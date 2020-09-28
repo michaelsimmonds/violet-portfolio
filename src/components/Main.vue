@@ -1,20 +1,19 @@
 <template>
   <div>
     <router-view></router-view>
-    <p>
-      <router-link to="/"></router-link>
-      <router-link to="/contact"></router-link>
-      <router-link to="/about"></router-link>
-      <router-link to="/gallery"></router-link>
-    </p>
+    <Nav />
   </div>
 </template>
 
 <script>
+import Nav from "./Nav/Nav.vue";
 import { detectMouse } from "../assets/utilities";
 
 export default {
   name: "Main",
+  components: {
+    Nav
+  },
   mounted() {
     detectMouse();
   }
