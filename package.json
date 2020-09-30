@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "homepage": "https://michaelsimmonds.github.io/violet-portfolio",
   "scripts": {
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
-    "build": "npm run clean && webpack --mode production"
+    "build": "npm run clean && webpack --mode production",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -31,6 +33,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "gh-pages": "^3.1.0",
     "lazysizes": "^5.2.2",
     "vue": "^2.6.11",
     "vue-animate-scroll": "^0.1.5",
