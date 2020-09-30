@@ -1,9 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { join } = require("path");
-// const path = require("path");
+const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const { HotModuleReplacementPlugin } = require("webpack");
 const CnameWebpackPlugin = require("cname-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -18,11 +19,6 @@ module.exports = {
     port: 8000,
     historyApiFallback: true
   },
-  resolve: {
-    alias: {
-      "@": join(__dirname, "src/app.js")
-    }
-  },
   module: {
     rules: [
       { test: /\.vue$/, loader: "vue-loader" },
@@ -32,10 +28,10 @@ module.exports = {
         test: /\.s(a|c)ss$/,
         loader: ["vue-style-loader", "css-loader", "sass-loader"]
       },
-      { test: /\.(png|jpg|gif|svg)$/i, loader: "file-loader" },
+      { test: /\.(png|jpg|jpeg|gif|svg)$/i, loader: "file-loader" },
       {
-        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader"
+        test: /\.(woff|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: ["url-loader", "file-loader"]
       }
     ]
   },
@@ -49,6 +45,9 @@ module.exports = {
       template: join(__dirname, "src/index.html"),
       filename: "index.html",
       inject: "body"
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "static", to: "static" }]
     })
   ]
 };

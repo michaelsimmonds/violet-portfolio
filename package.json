@@ -5,11 +5,11 @@
   "license": "MIT",
   "homepage": "https://violetiolaargent.com",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "npm run clean && webpack --mode production",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "cname-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^6.1.1",
+    "file-loader": "^6.1.0",
     "gh-pages": "^3.1.0",
     "lazysizes": "^5.2.2",
     "vue": "^2.6.11",
