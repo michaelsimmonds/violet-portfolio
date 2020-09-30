@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { join } = require("path");
-const path = require("path");
+// const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const { HotModuleReplacementPlugin } = require("webpack");
+const CnameWebpackPlugin = require("cname-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -19,7 +20,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@": path.resolve("src")
+      "@": join(__dirname, "src/app.js")
     }
   },
   module: {
@@ -41,6 +42,9 @@ module.exports = {
   plugins: [
     new HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
+    new CnameWebpackPlugin({
+      domain: "violetiolaargent.com"
+    }),
     new HtmlWebpackPlugin({
       template: join(__dirname, "src/index.html"),
       filename: "index.html",

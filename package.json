@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://michaelsimmonds.github.io/violet-portfolio",
+  "homepage": "https://violetiolaargent.com",
   "scripts": {
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "npm run clean && webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -18,6 +18,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
@@ -33,6 +34,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "cname-webpack-plugin": "^2.0.1",
     "gh-pages": "^3.1.0",
     "lazysizes": "^5.2.2",
     "vue": "^2.6.11",
