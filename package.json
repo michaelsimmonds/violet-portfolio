@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "build": "npm run clean && webpack --mode production"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -15,6 +17,7 @@
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.3.0",
     "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.1",
