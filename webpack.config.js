@@ -47,7 +47,10 @@ module.exports = {
       inject: "body"
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "static", to: "static" }]
+      patterns: [
+        { from: "static", to: "static" },
+        { from: "static/_redirects", to: "_redirects" }
+      ]
     })
   ]
 };
