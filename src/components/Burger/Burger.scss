@@ -14,13 +14,15 @@
   }
 
   &:hover {
-    .hamburger-menu__span {
-      &--1 {
-        transform: translate(0, -3px);
-      }
+    @media (pointer: fine) {
+      .hamburger-menu__span {
+        &--1 {
+          transform: translate(0, -3px);
+        }
 
-      &--3 {
-        transform: translate(0, 3px);
+        &--3 {
+          transform: translate(0, 3px);
+        }
       }
     }
   }

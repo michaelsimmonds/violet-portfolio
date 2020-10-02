@@ -105,7 +105,9 @@
 
     .nav__list-link {
       &:hover {
-        color: rgba($c-white, 0.7);
+        @media (pointer: fine) {
+          color: rgba($c-white, 0.7);
+        }
       }
 
       &--home {
@@ -129,8 +131,11 @@
 
       &:hover {
         // color: rgba($c-black, 0.7);
-        opacity: 0.7;
-        transition-delay: 0;
+
+        @media (pointer: fine) {
+          opacity: 0.7;
+          transition-delay: 0;
+        }
       }
     }
   }
