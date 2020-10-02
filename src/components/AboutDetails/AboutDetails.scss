@@ -43,9 +43,7 @@
     }
 
     &--2 {
-      align-items: center;
       bottom: 0;
-      display: flex;
       left: 0;
       position: absolute;
       right: 0;
@@ -54,6 +52,7 @@
 
       @include media-breakpoint-up(md) {
         align-items: flex-start;
+        display: flex;
         left: unset;
         right: 0;
         top: 120px;
@@ -129,8 +128,12 @@
   }
 
   &__text-wrapper {
-    margin-top: 20px;
+    margin-top: 100px;
     padding: 0 30px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
 
     @include media-breakpoint-up(xl) {
       margin: 0 auto;
