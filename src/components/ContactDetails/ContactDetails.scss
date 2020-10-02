@@ -4,8 +4,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
 
@@ -26,7 +26,7 @@
       // background-color: rgb(1, 81, 81);
       // background-color: rgba(59, 74, 84, 0.2);
       background-color: $c-light-grey;
-      height: 300px;
+      height: 180px;
       margin-top: 80px;
 
       @include media-breakpoint-up(md) {
@@ -37,6 +37,11 @@
         height: 100%;
         margin-top: 0;
       }
+    }
+
+    &--2 {
+      align-items: center;
+      display: flex;
     }
   }
 
