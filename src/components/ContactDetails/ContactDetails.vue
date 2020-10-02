@@ -24,11 +24,11 @@
         <li class="contact-details__list-item">
           <a
             class="contact-details__link"
-            href="https://www.linkedin.com/in/violet-argent-8b512a136/"
+            href="https://www.linkedin.com/in/violetargent/"
             target="_blank"
           >
             <img class="contact-details__icon" src="static/icons/linkedin.svg" />
-            <span>linkedin.com/in/violet-argent-8b512a136</span>
+            <span>linkedin.com/in/violetargent</span>
           </a>
         </li>
       </ul>
