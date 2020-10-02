@@ -1,9 +1,6 @@
 <template>
   <div class="contact-details">
-    <div class="contact-details__section contact-details__section--1">
-      <h2 class="contact-details__subtitle">Let's chat</h2>
-    </div>
-    <div class="contact-details__section">
+    <div class="contact-details__section contact-details__section--2">
       <ul class="contact-details__list">
         <li class="contact-details__list-item">
           <a class="contact-details__link" href="mailto:violetiargent@gmail.com">
@@ -33,6 +30,12 @@
         </li>
       </ul>
     </div>
+    <div class="contact-details__section contact-details__section--1">
+      <figure class="contact-details__image-wrapper">
+        <img class="contact-details__image" src="static/images/cutoff1.jpeg" alt />
+      </figure>
+    </div>
+    <div class="contact-details__overlay"></div>
   </div>
 </template>
 

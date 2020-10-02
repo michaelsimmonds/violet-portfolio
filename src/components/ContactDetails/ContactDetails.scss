@@ -10,7 +10,19 @@
   position: relative;
 
   @include media-breakpoint-up(xl) {
-    flex-direction: row;
+    flex-direction: row-reverse;
+  }
+
+  &__image-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__image {
+    animation: 3s ease fadeIn 0.3s backwards;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
 
   &__section {
@@ -23,41 +35,35 @@
     }
 
     &--1 {
-      // background-color: rgb(1, 81, 81);
-      // background-color: rgba(59, 74, 84, 0.2);
-      background-color: $c-light-grey;
-      height: 180px;
-      margin-top: 80px;
-
-      @include media-breakpoint-up(md) {
-        height: 500px;
-      }
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
 
       @include media-breakpoint-up(xl) {
-        height: 100%;
-        margin-top: 0;
+        left: 10%;
       }
     }
 
     &--2 {
       align-items: center;
       display: flex;
+      z-index: 3;
     }
   }
 
-  &__subtitle {
-    animation: 2s ease fadeIn backwards;
-    font-family: NeueMediumItalic;
-    font-size: 55px;
-    left: 50%;
+  &__overlay {
+    background-color: rgba($c-white, 0.75);
+    bottom: 0;
+    left: 0;
     position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+    right: 0;
+    top: 0;
+    z-index: 2;
 
-    @include media-breakpoint-up(md) {
-      font-size: 80px;
+    @include media-breakpoint-up(xl) {
+      display: none;
     }
   }
 
@@ -67,17 +73,18 @@
     justify-content: space-around;
     list-style: none;
     margin-top: 20px;
+    width: 100%;
 
     @include media-breakpoint-up(md) {
       margin-top: 40px;
     }
 
     @include media-breakpoint-up(xl) {
-      left: 50%;
+      left: 70%;
       margin-top: 0;
       position: absolute;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateY(-50%);
       width: 60%;
     }
   }
@@ -88,7 +95,9 @@
     border-radius: 8px;
     color: rgba(0, 0, 0, 1);
     display: flex;
-    margin: 20px;
+    font-family: NeueMedium;
+    font-size: 20px;
+    margin: 30px auto;
     position: relative;
     text-decoration: none;
     transition: background-size 0.3s cubic-bezier(0, 0.7, 0.3, 1),
@@ -96,6 +105,7 @@
     width: fit-content;
 
     @include media-breakpoint-up(md) {
+      font-size: 25px;
       margin: 30px auto;
     }
 
@@ -145,7 +155,7 @@
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
-        animation-delay: 0.5s + $i * (0.1s);
+        animation-delay: 0.7s + $i * (0.1s);
       }
     }
   }

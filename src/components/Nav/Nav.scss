@@ -54,7 +54,7 @@
   }
 
   &__list-item {
-    animation: 0.5s navFadeIn ease-out forwards;
+    animation: 0.5s navFadeInMobile ease-out forwards;
     display: block;
     font-size: 20px;
     margin: 40px 100px;
@@ -63,6 +63,7 @@
     text-decoration: none;
 
     @include media-breakpoint-up(md) {
+      animation: 0.5s navFadeIn ease-out forwards;
       margin: 0 50px;
     }
 
@@ -94,12 +95,16 @@
 
   &--open {
     .nav__list-item {
-      animation: 0.5s navFadeOut ease-out backwards;
+      animation: 0.5s navFadeOutMobile ease-out backwards;
 
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           animation-delay: 0.2s + ($i * 0.1s);
         }
+      }
+
+      @include media-breakpoint-up(md) {
+        animation: 0.5s navFadeOut ease-out backwards;
       }
     }
 
@@ -175,6 +180,30 @@
     100% {
       opacity: 0;
       transform: translateY(-40px);
+    }
+  }
+
+  @keyframes navFadeOutMobile {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes navFadeInMobile {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(40px);
     }
   }
 }
