@@ -8,8 +8,7 @@
     "clean": "rimraf build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "yarn run clean && webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "build": "yarn run clean && webpack --mode production"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
