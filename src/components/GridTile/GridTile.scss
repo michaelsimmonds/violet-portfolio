@@ -61,6 +61,9 @@
 
 .slideUpFade.animate-active {
   animation: slideUpFade 1s ease 0.5s backwards;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
 @keyframes slideUpFade {
