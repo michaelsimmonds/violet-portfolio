@@ -7,6 +7,7 @@
       16 16,
     pointer;
   display: inline-block;
+  opacity: 0;
   overflow: hidden;
   -webkit-perspective: 1000;
   position: relative;
@@ -60,10 +61,7 @@
 }
 
 .slideUpFade.animate-active {
-  animation: slideUpFade 1s ease 0.5s backwards;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
+  animation: slideUpFade 1s ease 0.5s forwards;
 }
 
 @keyframes slideUpFade {
