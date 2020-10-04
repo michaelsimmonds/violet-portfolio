@@ -12,7 +12,7 @@
         </p>
 
         <p class="about-details__copy about-details__copy--2">
-          After graduating with a Distinction in Masters Illustration from Camberwell
+          After graduating with a Distinction in MA Illustration from Camberwell
           College of Arts, Violet has gone on to complete commissions for both personal art
           collections and publications.
         </p>
