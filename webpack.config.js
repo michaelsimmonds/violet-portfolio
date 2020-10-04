@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { join } = require("path");
-const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const { HotModuleReplacementPlugin } = require("webpack");
 const CnameWebpackPlugin = require("cname-webpack-plugin");
@@ -17,6 +16,7 @@ module.exports = {
     hot: true,
     open: true,
     port: 8000,
+    host: "0.0.0.0",
     historyApiFallback: true
   },
   module: {

@@ -3,6 +3,7 @@
 .hero {
   animation: 3s ease fadeIn 0.3s backwards;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -10,6 +11,7 @@
   &__image-wrapper {
     bottom: 0;
     left: 0;
+    overflow: hidden;
     position: absolute;
     right: 0;
     top: 0;
