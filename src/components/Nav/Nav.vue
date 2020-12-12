@@ -1,5 +1,5 @@
 <template>
-  <div class="nav" :class="{ 'nav--open': navOpen}">
+  <div class="nav" :class="{ 'nav--open': navOpen, 'nav--white': whiteNav }">
     <div class="nav__wrapper">
       <div class="nav__home-wrapper">
         <span
@@ -58,13 +58,20 @@ export default {
           path: "/contact",
           title: "Contact"
         }
-      ]
+      ],
+      width: undefined
     };
   },
   computed: {
     path() {
       return this.$route.path;
+    },
+    whiteNav() {
+      return this.$route.path === "/about" && this.width < 560;
     }
+  },
+  mounted() {
+    this.width = window.innerWidth;
   },
   methods: {
     toggleNav: function() {

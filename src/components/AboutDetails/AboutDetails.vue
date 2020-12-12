@@ -16,6 +16,10 @@
           College of Arts, Violet has gone on to complete commissions for both personal art
           collections and publications.
         </p>
+
+        <div class="about-details__copy about-details__copy--2 about-details__aoi-wrapper">
+          <img src="static/icons/badge.png" alt="aoi badage" class="about-details__aoi-badge" />
+        </div>
       </div>
     </div>
     <div class="about-details__section about-details__section--1">

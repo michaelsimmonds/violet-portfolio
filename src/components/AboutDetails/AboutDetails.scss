@@ -97,17 +97,17 @@
       animation: 1s ease fadeInFromRight 1s backwards;
 
       @include media-breakpoint-up(md) {
-        padding-left: 140px;
+        margin-left: 140px;
       }
 
       @include media-breakpoint-up(xl) {
-        padding-left: 0;
+        margin-left: 0;
       }
     }
   }
 
   &__image-wrapper {
-    bottom: -50px;
+    bottom: -55px;
     height: 100%;
     left: 0;
     position: absolute;
@@ -147,5 +147,14 @@
       max-width: 750px;
       padding: 0 80px;
     }
+  }
+
+  &__aoi-wrapper {
+    margin-top: 25px;
+    width: 125px;
+  }
+
+  &__aoi-badge {
+    width: 100%;
   }
 }
