@@ -1,6 +1,6 @@
 import "./style.scss";
 import Vue from "vue";
-import Main from "./components/Main.vue";
+import Main from "./Main.vue";
 import Router from "./router";
 import VueAnimate from "vue-animate-scroll";
 Vue.use(VueAnimate);

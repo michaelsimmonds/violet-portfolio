@@ -12,6 +12,7 @@
         <Burger @click.native="toggleNav" :checked="navOpen" />
       </div>
     </div>
+
     <transition name="nav-slide">
       <div v-if="navOpen" class="nav__panel">
         <ul class="nav__list">
@@ -46,10 +47,22 @@ export default {
         title: "Violet Argent"
       },
       pageLinks: [
-        {
-          path: "/gallery",
-          title: "Gallery"
+                {
+          path: "/watercolours-and-drawings",
+          title: "Watercolours & Drawings"
         },
+        {
+          path: "/digital-illustrations",
+          title: "Digital Illustrations"
+        },
+        {
+          path: "/sculpture",
+          title: "Sculpture"
+        },
+        // {
+        //   path: "/gallery",
+        //   title: "Gallery"
+        // },
         {
           path: "/about",
           title: "About"
@@ -74,11 +87,10 @@ export default {
     this.width = window.innerWidth;
   },
   methods: {
-    toggleNav: function() {
+    toggleNav() {
       this.navOpen = !this.navOpen;
-      this.navOpen
-        ? (document.body.style.overflow = "hidden")
-        : (document.body.style.overflow = "auto");
+
+      document.body.style.overflow = this.navOpen ? "hidden": "auto"
     },
     checkRoute(path) {
       if (this.$route.path === path && this.navOpen) {

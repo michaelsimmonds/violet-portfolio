@@ -101,7 +101,7 @@
     .nav__list-item {
       animation: 0.5s navFadeOutMobile ease-out backwards;
 
-      @for $i from 1 through 3 {
+      @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
           animation-delay: 0.2s + ($i * 0.1s);
         }
@@ -136,11 +136,8 @@
     &--home {
       color: $c-black;
       transition: color 0.3s ease 0.7s;
-      // transition-delay: 0.7s;
 
       &:hover {
-        // color: rgba($c-black, 0.7);
-
         @media (pointer: fine) {
           opacity: 0.7;
           transition-delay: 0;

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Grid from "./Grid/Grid.vue";
+import Grid from "../components/Grid/Grid.vue";
 
 export default {
   name: "Gallery",

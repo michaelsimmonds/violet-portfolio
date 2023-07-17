@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Nav from "./Nav/Nav.vue";
-import { detectMouse } from "../assets/utilities";
+import Nav from "./components/Nav/Nav.vue";
+import { detectMouse } from "./utils";
 
 export default {
   name: "Main",
