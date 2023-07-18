@@ -3,7 +3,7 @@
     <div class="grid-tile__height-setter"></div>
     <div class="grid-tile__overlay"></div>
     <figure class="grid-tile__image-wrapper">
-      <img :alt="image.alt" :src="getSrc" :data-src="getSrc" class="grid-tile__image lazyload" />
+      <img :alt="image.alt || 'illustration'" :src="image.src" :data-src="image.src" class="grid-tile__image lazyload" />
     </figure>
   </div>
 </template>
@@ -27,11 +27,6 @@ export default {
       }
     }
   },
-  computed: {
-    getSrc: function() {
-      return "static/images/" + this.image.src;
-    }
-  }
 };
 </script>
 

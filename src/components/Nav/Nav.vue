@@ -20,11 +20,10 @@
             v-for="(link, index) in pageLinks"
             :key="index"
             class="nav__list-item"
-            :class="{'active': path === link.path}"
             @click="checkRoute(link.path)"
             tabindex="0"
           >
-            <span class="nav__list-link">{{link.title}}</span>
+            <span class="nav__list-link" :class="{'active': path === link.path}">{{link.title}}</span>
           </li>
         </ul>
       </div>

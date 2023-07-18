@@ -32,7 +32,7 @@
     </div>
     <div class="contact-details__section contact-details__section--1">
       <figure class="contact-details__image-wrapper">
-        <img class="contact-details__image" src="static/images/cutoff1.jpeg" alt />
+        <img class="contact-details__image" src="static/images/watercolour/watercolour-3.jpeg" alt />
       </figure>
     </div>
     <div class="contact-details__overlay"></div>

@@ -4,6 +4,9 @@ import Home from "./pages/Home.vue";
 import About from "./pages/About.vue";
 import Contact from "./pages/Contact.vue";
 import Gallery from "./pages/Gallery.vue";
+import Sculpture from "./pages/Sculpture.vue";
+import DigitalIllustrations from "./pages/DigitalIllustrations.vue";
+import WatercoloursAndDrawings from "./pages/WatercoloursAndDrawings.vue";
 
 Vue.use(Router);
 
@@ -27,9 +30,19 @@ export default new Router({
       component: About
     },
     {
-      path: "/gallery",
-      name: "Gallery",
-      component: Gallery
+      path: "/sculpture",
+      name: "Sculpture",
+      component: Sculpture
+    },
+    {
+      path: "/digital-illustrations",
+      name: "Digital Illustrations",
+      component: DigitalIllustrations
+    },
+    {
+      path: "/watercolours-and-drawings",
+      name: "Watercolours And Drawings",
+      component: WatercoloursAndDrawings
     },
     {
       path: "*",

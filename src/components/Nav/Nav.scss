@@ -80,6 +80,10 @@
         animation-delay: 0.3s - ($i * 0.1s);
       }
     }
+  }
+
+  &__list-link {
+    transition: color 0.3s ease 0.7s;
 
     &.active {
       &:after {
@@ -93,6 +97,14 @@
         transform: translate(-50%);
         transition: all 0.3s ease;
         width: 75%;
+      }
+
+      &:hover {
+        @media (pointer: fine) {
+          &:after {
+            background-color: rgba($c-white, 0.7);
+          }
+        }
       }
     }
   }

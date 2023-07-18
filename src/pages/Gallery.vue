@@ -1,5 +1,5 @@
 <template>
-  <div class="galery pos-relative">
+  <div class="pos-relative">
     <div class="container pos-relative">
       <Grid />
     </div>

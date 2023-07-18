@@ -24,7 +24,7 @@
     </div>
     <div class="about-details__section about-details__section--1">
       <figure class="about-details__image-wrapper">
-        <img class="about-details__image" src="static/images/cutoff2.jpeg" alt />
+        <img class="about-details__image" src="static/images/watercolour/watercolour-23.jpeg" alt />
       </figure>
     </div>
     <div class="about-details__overlay"></div>
