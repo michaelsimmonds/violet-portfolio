@@ -58,10 +58,6 @@ export default {
           path: "/sculpture",
           title: "Sculpture"
         },
-        // {
-        //   path: "/gallery",
-        //   title: "Gallery"
-        // },
         {
           path: "/about",
           title: "About"
