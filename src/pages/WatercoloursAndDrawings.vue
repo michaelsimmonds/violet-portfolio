@@ -14,9 +14,6 @@ export default {
   components: {
     Grid
   },
-  mounted() {
-    console.log('hi')
-  },
   data() {
     return {
       gridImages: [
